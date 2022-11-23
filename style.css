@@ -328,7 +328,7 @@ FEATURES
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* padding: 24px; */
+    padding: 24px;
 }
 
 .book__img {
@@ -342,6 +342,7 @@ FEATURES
     border-radius: 4px;
     display: flex;
     overflow: hidden;
+    transform: translateX(-16px);
 }
 
 .book:hover .book__img {
@@ -415,7 +416,33 @@ footer {
     padding: 0 8px;
 }
 
+
+
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .header__description {
+        padding: 0 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .book {
+        width: 50%;
+    }
+}
+
+
+/* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
     .nav__links {
         display: none;
@@ -425,6 +452,3 @@ footer {
         display: block;
     }
 }
-
-
-@media ()
