@@ -25,13 +25,20 @@ function renderBooks(filter) {
             ${ratingsHtml(book.rating)}
             </div>
             <div class="book__price">
-              <span class="">$${book.originalPrice.toFixed(2)}</span>
+              ${priceHtml(book.originalPrice, book.salePrice)}
             </div>
         </div>`
     })
     .join("");
 
     booksWrapper.innerHTML = booksHtml;
+ }
+
+ function priceHtml(originalPrice, salePrice) {
+    if (!salePrice) {
+        return `$${originalPrice.toFixed(2)}`
+    }
+    return `<span class="book__price--normal">$59.95</span> $14.95`
  }
 
  function ratingsHtml(rating) {
