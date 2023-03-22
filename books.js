@@ -4,10 +4,10 @@ function renderBooks(filter) {
     
 
     if (filter === 'LOW_TO_HIGH') {
-        books.sort((a, b) => a.originalPrice - b.originalPrice);
+        books.sort((a, b) => (a.salePrioce || a.originalPrice) - (b.salePrice || b.originalPrice));
     }
     else if (filter === 'HIGH_TO_LOW') {
-        books.sort((a, b) => b.originalPrice - a.originalPrice);
+        books.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
     }
     else if (filter === 'RATING') {
         books.sort((a, b) => b.rating - a.rating);
@@ -38,7 +38,7 @@ function renderBooks(filter) {
     if (!salePrice) {
         return `$${originalPrice.toFixed(2)}`
     }
-    return `<span class="book__price--normal">$59.95</span> $14.95`
+    return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`
  }
 
  function ratingsHtml(rating) {
